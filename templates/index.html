@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriNova AI – Smart Agriculture Assistant</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23144A24'><path d='M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10a9.99 9.99 0 0 1-7.07-2.93l9.07-9.07a1 1 0 0 0-1.414-1.414l-9.07 9.07A9.99 9.99 0 0 1 2 12C2 6.477 6.477 2 12 2z'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#144A24',
+            'forest-dark': '#0E381A',
+            'fresh-green': '#2E7D32',
+            'cream-soft': '#F8FAF8',
+            'accent-gold': '#E5A919',
+            charcoal: '#1E293B'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="bg-white text-slate-800 min-h-screen flex flex-col antialiased selection:bg-emerald-100 selection:text-emerald-900 relative">
+
+  <!-- ==========================================================================
+       REALISTIC BOTANICAL PLANT LEAF SHADOWS
+       Simulates warm daylight streaming through lush monstera & palm foliage,
+       casting soft organic plant shadows onto the radiant white canvas.
+       ========================================================================== -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    
+    <!-- Top-Right Cascading Monstera & Palm Leaf Silhouette Shadow -->
+    <svg class="absolute -top-10 -right-10 w-[600px] h-[600px] sm:w-[750px] sm:h-[750px] lg:w-[900px] lg:h-[900px] text-emerald-950/20" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="shadow-blur-top" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="9" />
+        </filter>
+      </defs>
+      <g filter="url(#shadow-blur-top)" fill="currentColor">
+        <!-- Arching Palm / Fern Branch Stem -->
+        <path d="M1020,-20 C850,160 680,350 480,620" stroke="currentColor" stroke-width="8" fill="none"/>
+        <!-- Palm Frond Leaflets -->
+        <path d="M980,40 C880,95 760,125 650,135 C760,110 890,75 980,40 Z"/>
+        <path d="M950,100 C840,160 710,195 590,205 C715,180 845,145 950,100 Z"/>
+        <path d="M910,170 C790,240 660,275 530,285 C665,255 805,210 910,170 Z"/>
+        <path d="M860,250 C740,320 605,360 470,370 C610,340 755,290 860,250 Z"/>
+        <path d="M800,340 C680,410 540,455 410,465 C550,430 700,375 800,340 Z"/>
+        <path d="M730,440 C610,510 470,555 350,565 C485,530 630,475 730,440 Z"/>
+        <path d="M650,540 C540,605 405,645 290,655 C420,625 555,575 650,540 Z"/>
+
+        <!-- Main Monstera Deliciosa Leaf Outline with Signature Cuts & Lobes -->
+        <path d="M900,160 C860,230 780,260 700,240 C660,230 620,195 590,150 C560,105 550,45 580,5 C620,-35 690,-45 760,-25 C830,-5 880,35 910,85 C940,135 930,195 900,250 C860,310 800,350 730,370 C660,390 590,380 530,350 C500,330 470,300 450,260 C480,270 520,260 550,240 C520,220 500,190 490,150 C520,160 560,160 590,140 C570,110 570,70 580,30 C610,60 650,70 690,60 C690,30 700,-10 730,-40 C760,0 790,30 840,40 C850,10 870,-20 900,-40 C910,10 940,50 980,80 C960,110 930,130 900,160 Z"/>
+
+        <!-- Monstera Internal Elliptical Fenestrations (Holes) -->
+        <ellipse cx="760" cy="180" rx="20" ry="8" transform="rotate(-35 760 180)"/>
+        <ellipse cx="710" cy="250" rx="24" ry="9" transform="rotate(-40 710 250)"/>
+        <ellipse cx="640" cy="290" rx="22" ry="8" transform="rotate(-45 640 290)"/>
+
+        <!-- Cascading Olive / Ficus Sprig -->
+        <path d="M950,380 C880,480 780,560 660,620" stroke="currentColor" stroke-width="4" fill="none"/>
+        <path d="M910,410 C860,430 820,410 800,380 C820,360 870,370 910,410 Z"/>
+        <path d="M850,470 C800,500 760,490 740,450 C760,430 810,430 850,470 Z"/>
+        <path d="M780,530 C730,560 690,550 670,510 C690,490 740,490 780,530 Z"/>
+      </g>
+    </svg>
+
+    <!-- Bottom-Left Foliage & Agricultural Botanical Sprig Silhouette -->
+    <svg class="absolute -bottom-16 -left-16 w-[500px] h-[500px] sm:w-[650px] sm:h-[650px] lg:w-[800px] lg:h-[800px] text-emerald-950/15" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="shadow-blur-bottom" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="10" />
+        </filter>
+      </defs>
+      <g filter="url(#shadow-blur-bottom)" fill="currentColor">
+        <!-- Upward branching agricultural vine stem -->
+        <path d="M-20,1020 C180,850 350,680 580,450" stroke="currentColor" stroke-width="7" fill="none"/>
+        <!-- Alternating Oval Foliage Leaves -->
+        <path d="M40,960 C110,890 145,770 145,660 C120,770 80,880 40,960 Z"/>
+        <path d="M110,910 C180,840 220,720 225,610 C195,720 155,830 110,910 Z"/>
+        <path d="M190,850 C265,775 310,650 310,530 C275,650 230,765 190,850 Z"/>
+        <path d="M280,780 C360,705 405,570 405,440 C365,570 315,690 280,780 Z"/>
+        <path d="M380,700 C465,620 515,475 510,340 C465,475 415,600 380,700 Z"/>
+        <!-- Broad tropical leaf at base -->
+        <path d="M80,820 C140,750 260,730 340,780 C410,830 430,920 380,980 C320,1030 190,1010 120,950 C80,910 60,860 80,820 Z"/>
+      </g>
+    </svg>
+
+    <!-- Subtle Dappled Sunlight Vignette Overlay -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(20,74,36,0.03)_0%,transparent_65%),radial-gradient(ellipse_at_bottom_left,rgba(229,169,25,0.02)_0%,transparent_50%)]"></div>
+  </div>
+
+  <!-- NAVBAR CONTAINER -->
+  <div id="navbar-container" class="relative z-20"></div>
+
+  <!-- MAIN DYNAMIC CONTENT CONTAINER -->
+  <main id="app-content" class="flex-1 w-full relative z-10"></main>
+
+  <!-- GLOBAL AUTH MODAL (LOGIN / REGISTER) -->
+  <div id="auth-modal" class="hidden fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-100 relative">
+      
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div>
+          <h3 id="auth-modal-title" class="text-xl font-extrabold text-slate-900">Farmer Login</h3>
+          <p class="text-xs text-slate-500">Access your personalized agronomic records</p>
+        </div>
+        <button onclick="window.authManager.closeAuthModal()" class="w-8 h-8 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-400 hover:text-slate-700 flex items-center justify-center transition">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Mode Toggle Tabs -->
+      <div class="flex bg-slate-50 p-1 rounded-xl text-center">
+        <button id="auth-tab-login" onclick="switchAuthMode('login')" class="flex-1 py-1.5 rounded-lg bg-white shadow-sm font-bold text-slate-900 text-xs transition">
+          Sign In
+        </button>
+        <button id="auth-tab-reg" onclick="switchAuthMode('register')" class="flex-1 py-1.5 rounded-lg font-medium text-slate-500 hover:text-slate-800 text-xs transition">
+          Create Account
+        </button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="auth-login-form" onsubmit="handleLoginSubmit(event)" class="space-y-4">
+        <div id="login-error" class="hidden p-3 rounded-xl bg-red-50 text-red-700 text-xs font-semibold border border-red-100"></div>
+
+        <div class="space-y-1.5">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Email Address</label>
+          <input type="email" id="login-email" required placeholder="farmer@agrinova.in" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-slate-800 focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700 focus:outline-none transition shadow-sm" />
+        </div>
+
+        <div class="space-y-1.5">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-slate-800 focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700 focus:outline-none transition shadow-sm" />
+        </div>
+
+        <button type="submit" class="btn-primary-agri w-full !py-3 text-sm shadow-sm">
+          <span>Sign In to AgriNova</span>
+        </button>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="auth-register-form" onsubmit="handleRegisterSubmit(event)" class="hidden space-y-3">
+        <div id="reg-error" class="hidden p-3 rounded-xl bg-red-50 text-red-700 text-xs font-semibold border border-red-100"></div>
+
+        <div class="space-y-1">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Full Name</label>
+          <input type="text" id="reg-name" required placeholder="e.g. Ramesh Kumar" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-800 focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700 focus:outline-none transition shadow-sm" />
+        </div>
+
+        <div class="space-y-1">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Email Address</label>
+          <input type="email" id="reg-email" required placeholder="ramesh@gmail.com" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-800 focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700 focus:outline-none transition shadow-sm" />
+        </div>
+
+        <div class="space-y-1">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Password (min 6 chars)</label>
+          <input type="password" id="reg-password" required minlength="6" placeholder="••••••••" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-800 focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700 focus:outline-none transition shadow-sm" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div class="space-y-1">
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">State</label>
+            <select id="reg-state" class="w-full bg-white border border-slate-200 rounded-xl px-2 py-2 text-xs font-semibold text-slate-800 focus:outline-none shadow-sm">
+              <option value="Punjab">Punjab</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+          </div>
+          <div class="space-y-1">
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">District</label>
+            <input type="text" id="reg-district" required placeholder="District Name" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 focus:outline-none shadow-sm" />
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Mobile Number (Optional)</label>
+          <input type="tel" id="reg-phone" placeholder="9876543210" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-xs font-semibold text-slate-800 focus:outline-none shadow-sm" />
+        </div>
+
+        <button type="submit" class="btn-primary-agri w-full !py-2.5 text-sm shadow-sm">
+          <span>Create Account</span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- APPLICATION SCRIPTS -->
+  <script src="/static/js/i18n.js"></script>
+  <script src="/static/js/components/profile.js"></script>
+  <script src="/static/js/components/navbar.js"></script>
+  <script src="/static/js/components/landing.js"></script>
+  <script src="/static/js/components/dashboard.js"></script>
+  <script src="/static/js/components/disease.js"></script>
+  <script src="/static/js/components/fertilizer.js"></script>
+  <script src="/static/js/components/weather.js"></script>
+  <script src="/static/js/components/market.js"></script>
+  <script src="/static/js/components/voice.js"></script>
+  <script src="/static/js/components/schemes.js"></script>
+  <script src="/static/js/components/tips.js"></script>
+  <script src="/static/js/components/history.js"></script>
+  <script src="/static/js/components/about.js"></script>
+  <script src="/static/js/app.js"></script>
+
+</body>
+</html>
