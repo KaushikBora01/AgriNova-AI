@@ -839,7 +839,7 @@ def detect_disease():
         "expert_consultation": disease_info["expert_consultation"],
         "feature_metrics": metrics,
         "differential_diagnoses": diff_diagnoses,
-        "model_engine": "PlantVillage MobileNetV2 (100% Pre-Trained Deep Learning Vision Model)"
+        "model_engine": "PlantVillage MobileNetV2 Architecture (Advisory Classifier)"
     })
 
 @disease_bp.route("/history", methods=["GET"])

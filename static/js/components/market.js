@@ -235,7 +235,7 @@ function displayMarketResults(data) {
             <i data-lucide="line-chart" class="w-4 h-4 text-emerald-800"></i>
             <span>Historical Mandi Trajectory & Machine Learning Projections</span>
           </h4>
-          <span class="text-xs font-semibold text-slate-500">Regression Confidence: <strong class="text-slate-900">${data.confidence_score}%</strong></span>
+          <span class="text-xs font-semibold text-slate-500">Estimated Trend: <strong class="text-slate-900">${data.trend_direction}</strong></span>
         </div>
         <div class="relative h-72 sm:h-80 w-full bg-slate-50 p-4 rounded-2xl border border-slate-200">
           <canvas id="market-forecast-chart"></canvas>
@@ -321,7 +321,7 @@ function renderMarketChart(history, forecast) {
           pointBackgroundColor: '#E5A919'
         },
         {
-          label: 'Upper Confidence Limit',
+          label: 'Upper Expected Range',
           data: upperBounds,
           borderColor: 'rgba(229, 169, 25, 0.35)',
           borderDash: [2, 2],
@@ -329,7 +329,7 @@ function renderMarketChart(history, forecast) {
           fill: false
         },
         {
-          label: 'Lower Confidence Limit',
+          label: 'Lower Expected Range',
           data: lowerBounds,
           borderColor: 'rgba(229, 169, 25, 0.35)',
           borderDash: [2, 2],

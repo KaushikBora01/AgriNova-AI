@@ -26,7 +26,7 @@ Designed to feel like a high-end commercial agriculture technology startup produ
 - **Device Camera Support**: Snap live photos directly from smartphone/tablet webcams.
 - **AgriVision-Net v2.4 Feature Extractor**: Analyzes leaf chlorophyll distribution, chlorosis yellowing index, necrotic lesion ratios, and spore texture variance.
 - **Comprehensive Pathology Database**: 25+ real plant diseases covered across Solanaceous crops (Tomato Early/Late Blight, Bacterial Spot, Leaf Mold), Cereals (Rice Blast, Brown Spot, Wheat Stripe/Yellow Rust, Powdery Mildew, Corn Blight), and Cash crops (Cotton Bacterial Blight, Potato Early/Late Blight).
-- **Prescription Results**: Disease name, scientific pathogen name, confidence score (e.g., 96.4%), observed symptoms, biological causes, chemical fungicides & bio-control agents (Trichoderma, Mancozeb, Copper Hydroxide), and immediate containment steps.
+- **Prescription Results**: Disease name, scientific pathogen name, advisory match level, observed symptoms, biological causes, chemical fungicides & bio-control agents (Trichoderma, Mancozeb, Copper Hydroxide), and immediate containment steps.
 - **Agronomic Alert**: Warns when immediate expert consultation with the local Krishi Vigyan Kendra (KVK) is required.
 - **Printable Diagnostics**: One-click print/download summary report.
 
@@ -41,7 +41,7 @@ Designed to feel like a high-end commercial agriculture technology startup produ
 ### 3. 🌦️ Real-Time Agricultural Weather & Advisories (`/api/weather`)
 - **Pan-India Geographic Coverage**: Full coverage across **all 28 States, 8 Union Territories, and all 750+ Districts of India** with exact geographical centroid coordinates (latitude & longitude) and agro-climatic zone classifications.
 - **Cascading State & District Selector**: Select any State/UT in India to immediately populate and view weather for all constituent districts, plus a live universal search bar and GPS auto-detection.
-- **Accurate Live Satellite Feed (Open-Meteo)**: Connects directly to global ECMWF/GFS weather satellite models (via Open-Meteo API) with sub-degree temperature precision (0.1°C), live cloud cover, exact wind velocity, relative humidity, precipitation probability, sunrise/sunset, and solar UV radiation.
+- **Live Agro-Meteorological Feed (Open-Meteo)**: Connects to global numerical weather models (via Open-Meteo API) with live cloud cover, wind velocity, relative humidity, precipitation probability, sunrise/sunset, and solar UV radiation.
 - **Actionable Farming Advisories**:
   - **Irrigation Timing**: Conserves water when rainfall probability exceeds 45%; alerts on rapid evapotranspiration during dry heatwaves.
   - **Pesticide Spray Window**: Warns against wind drift loss (>12 km/h) and chemical washout before rain; pinpoints optimal morning spraying hours (7:00 AM - 10:30 AM).
@@ -53,7 +53,7 @@ Designed to feel like a high-end commercial agriculture technology startup produ
 ### 4. 📈 AI Market Price Prediction (`/api/market`)
 - **APMC Mandi Intelligence**: Track commodity spot rates across India's premier markets (Khanna Mandi, Lasalgaon APMC, Azadpur Mandi, Karnal Mandi, Rajkot APMC, Devi Ahilya Mandi, etc.).
 - **Scikit-Learn Machine Learning**: 2nd-order Polynomial Ridge Regression modeling 30-day historical trading, seasonal arrival peaks, and stochastic price cycles.
-- **Forecast Horizons**: 7-day, 15-day, and 30-day future modal price trajectories with upper & lower 95% confidence bands.
+- **Forecast Horizons**: 7-day, 15-day, and 30-day future modal price trajectories with projected upper & lower trend bands.
 - **Farmer Selling Advice**: Bullish, bearish, or stable market advice indicating whether to hold stock in dry storage or liquidize immediately.
 - **Agmarknet Benchmarks**: Governed by official Directorate of Marketing & Inspection (GoI) commodity standards.
 

@@ -317,7 +317,7 @@ async function renderDashboard() {
             <div class="p-3.5 rounded-2xl border border-purple-100 bg-purple-50/30 space-y-1.5 cursor-pointer hover:bg-purple-50/60 transition" onclick="window.router.navigate('schemes')">
               <div class="flex items-center justify-between">
                 <h4 class="text-xs sm:text-sm font-bold text-purple-950">PM-KISAN Samman Nidhi</h4>
-                <span class="badge-agri-gold text-[10px]">98% Eligibility Match</span>
+                <span class="badge-agri-gold text-[10px]">Recommended Scheme</span>
               </div>
               <p class="text-xs text-purple-900/80 leading-relaxed">
                 Direct income transfer of ₹6,000/year deposited in 3 equal four-monthly installments.
@@ -327,7 +327,7 @@ async function renderDashboard() {
             <div class="p-3.5 rounded-2xl border border-emerald-100 bg-emerald-50/30 space-y-1.5 cursor-pointer hover:bg-emerald-50/60 transition" onclick="window.router.navigate('schemes')">
               <div class="flex items-center justify-between">
                 <h4 class="text-xs sm:text-sm font-bold text-emerald-950">PM Fasal Bima Yojana (PMFBY)</h4>
-                <span class="badge-agri-green text-[10px]">96% Eligibility Match</span>
+                <span class="badge-agri-green text-[10px]">Eligible Scheme</span>
               </div>
               <p class="text-xs text-emerald-900/80 leading-relaxed">
                 Subsidized comprehensive crop insurance against non-preventable natural risks at 1.5% - 2% premium.

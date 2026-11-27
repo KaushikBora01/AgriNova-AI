@@ -71,7 +71,7 @@ function renderAboutPage() {
           <div class="p-4 rounded-2xl border border-slate-200 bg-slate-50 space-y-1.5">
             <span class="font-extrabold text-emerald-900 uppercase tracking-wider text-[11px] block">3. Market Price Forecasting</span>
             <p class="text-slate-600 leading-relaxed font-medium">
-              <strong>Scikit-Learn Polynomial Ridge Regression:</strong> Models cyclical mandi arrivals, seasonal harvest peaks, and historical modal price variations with 95% confidence intervals.
+              <strong>Scikit-Learn Polynomial Ridge Regression:</strong> Models cyclical mandi arrivals, seasonal harvest peaks, and historical modal price variations with estimated trend bounds.
             </p>
           </div>
 

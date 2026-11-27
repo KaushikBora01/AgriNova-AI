@@ -77,7 +77,7 @@ const TRANSLATIONS = {
     dis_result_title: "Diagnosis Result",
     dis_crop_name: "Detected Crop",
     dis_disease_name: "Identified Disease / Condition",
-    dis_confidence: "AI Confidence Score",
+    dis_confidence: "Advisory Match",
     dis_symptoms: "Observed Symptoms",
     dis_causes: "Pathogen & Climatic Causes",
     dis_prevention: "Recommended Preventive Measures",
@@ -133,7 +133,7 @@ const TRANSLATIONS = {
     mkt_predicted_price: "Predicted Price",
     mkt_trend: "Price Trend",
     mkt_chart_title: "Historical Trends & Machine Learning Forecast",
-    mkt_confidence: "Model Confidence",
+    mkt_confidence: "Estimated Trend Direction",
     mkt_advice: "Farmer Selling Advisory",
 
     // Voice
@@ -223,7 +223,7 @@ const TRANSLATIONS = {
     dis_result_title: "रोग निदान परिणाम",
     dis_crop_name: "पहचानी गई फसल",
     dis_disease_name: "रोग / समस्या का नाम",
-    dis_confidence: "एआई विश्वसनीयता स्कोर",
+    dis_confidence: "रोग पहचान मिलान",
     dis_symptoms: "रोग के लक्षण",
     dis_causes: "रोग के प्रमुख कारण",
     dis_prevention: "बचाव के उपाय",
@@ -276,7 +276,7 @@ const TRANSLATIONS = {
     mkt_predicted_price: "अनुमानित भविष्य भाव",
     mkt_trend: "भाव की दिशा",
     mkt_chart_title: "ऐतिहासिक भाव और एआई भविष्य चार्ट",
-    mkt_confidence: "मॉडल विश्वसनीयता",
+    mkt_confidence: "अनुमानित रुझान",
     mkt_advice: "फसल बेचने की सलाह",
 
     voice_heading: "एग्रीनोवा एआई वॉयस असिस्टेंट",

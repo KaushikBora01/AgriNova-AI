@@ -562,11 +562,11 @@ async function analyzeSelectedImage() {
 
   // Staged progress simulation
   loadingBar.style.width = '35%';
-  stageText.innerText = "Step 1/3: Processing image through pre-trained MobileNetV2 neural network...";
+  stageText.innerText = "Step 1/3: Reading leaf image features...";
 
   setTimeout(() => {
     loadingBar.style.width = '70%';
-    stageText.innerText = "Step 2/3: Evaluating 38 PlantVillage deep visual feature maps & lesion patterns...";
+    stageText.innerText = "Step 2/3: Comparing visual patterns against PlantVillage database...";
   }, 400);
 
   try {
@@ -591,7 +591,7 @@ async function analyzeSelectedImage() {
     const result = await response.json();
 
     loadingBar.style.width = '100%';
-    stageText.innerText = "Step 3/3: Diagnosis synthesized!";
+    stageText.innerText = "Step 3/3: Advisory report generated!";
 
     setTimeout(() => {
       loadingBox.classList.add('hidden');
@@ -643,9 +643,15 @@ function displayDiseaseResult(data) {
         </div>
 
         <div class="text-left sm:text-right bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm flex-shrink-0">
-          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Diagnostic Confidence</span>
-          <span class="text-3xl font-black text-slate-900 tabular-nums">${data.confidence}%</span>
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Advisory Status</span>
+          <span class="text-xl sm:text-2xl font-black text-emerald-800">Visual Pattern Match</span>
         </div>
+      </div>
+
+      <!-- ADVISORY NOTICE -->
+      <div class="p-3.5 rounded-xl bg-amber-50/80 border border-amber-200 text-amber-900 text-xs flex items-center gap-2.5">
+        <i data-lucide="info" class="w-4 h-4 text-amber-700 flex-shrink-0"></i>
+        <span><strong>Advisory Guidance:</strong> Automated computer vision screening. Please verify with a local Krishi Vigyan Kendra (KVK) specialist or agricultural extension officer before chemical intervention.</span>
       </div>
 
       <!-- MAIN DIAGNOSIS CONTENT -->
@@ -702,10 +708,10 @@ function displayDiseaseResult(data) {
                 <div class="space-y-1">
                   <div class="flex justify-between text-[11px]">
                     <span class="font-bold text-slate-800 truncate mr-2">${idx + 1}. ${item.disease}</span>
-                    <span class="font-extrabold text-slate-600 tabular-nums">${item.confidence}%</span>
+                    <span class="font-semibold text-slate-500">${idx === 0 ? 'Primary Match' : 'Potential Match'}</span>
                   </div>
                   <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
-                    <div class="${idx === 0 ? 'bg-emerald-600' : 'bg-slate-400'} h-1.5 rounded-full" style="width: ${item.confidence}%"></div>
+                    <div class="${idx === 0 ? 'bg-emerald-600' : 'bg-slate-400'} h-1.5 rounded-full" style="width: ${idx === 0 ? '80%' : (idx === 1 ? '45%' : '25%')}"></div>
                   </div>
                 </div>
               `).join('')}

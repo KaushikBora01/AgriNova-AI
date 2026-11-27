@@ -56,7 +56,7 @@ function renderLandingPage() {
               </div>
               <div>
                 <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Vision Engine</span>
-                <span class="text-xs font-extrabold text-slate-800">98.4% Disease Accuracy</span>
+                <span class="text-xs font-extrabold text-slate-800">AI Leaf Disease Scanner</span>
                 <span class="block text-[10px] text-emerald-700 font-semibold">25+ Plant Pathologies</span>
               </div>
             </div>
@@ -92,8 +92,8 @@ function renderLandingPage() {
               <div class="text-xs text-slate-500 font-medium">Pan-India Geographic Coverage</div>
             </div>
             <div class="space-y-0.5">
-              <div class="text-2xl sm:text-3xl font-black text-emerald-800">100%</div>
-              <div class="text-xs text-slate-500 font-medium">ICAR & Agmarknet Compliance</div>
+              <div class="text-2xl sm:text-3xl font-black text-emerald-800">Verified</div>
+              <div class="text-xs text-slate-500 font-medium">ICAR & Agmarknet Guidelines</div>
             </div>
             <div class="space-y-0.5">
               <div class="text-2xl sm:text-3xl font-black text-slate-900">12 Languages</div>
@@ -355,7 +355,7 @@ function renderLandingPage() {
 
           <div class="border-t border-slate-100 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400">
             <p>© 2025 AgriNova AI Technologies. Dedicated to Indian Farmers.</p>
-            <p class="mt-2 sm:mt-0">Human-Engineered for Precision Agriculture.</p>
+            <p class="mt-2 sm:mt-0">Engineered for Smart Advisory Agriculture.</p>
           </div>
         </div>
       </footer>

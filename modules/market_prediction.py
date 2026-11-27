@@ -157,7 +157,7 @@ MANDI_DIRECTORY = {
 def train_and_forecast_prices(commodity, current_modal, days_horizon=15):
     """
     Fits a Scikit-Learn Polynomial Ridge Regression model over past 30 days of mandi trading
-    and projects the price curve into the future with 95% confidence intervals.
+    and projects the price curve into the future with estimated trend intervals.
     """
     base_info = COMMODITY_BASELINES.get(commodity, COMMODITY_BASELINES["Wheat"])
     vol = base_info["volatility"]
